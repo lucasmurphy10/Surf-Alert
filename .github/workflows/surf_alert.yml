@@ -28,4 +28,4 @@ jobs:
         run: |
           echo "$GOOGLE_CREDENTIALS" > credentials.json
           echo "$GOOGLE_TOKEN" > token.json
-          python surf_alert.py
+          python Surf_Alert.py
