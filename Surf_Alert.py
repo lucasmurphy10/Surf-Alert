@@ -187,7 +187,7 @@ def gmail_send_message():
     print(f"✅ Message sent! ID: {send_message['id']}")
 
 if __name__ == "__main__":
-    if now[1] > 3 and now[3] >= 8:
+    if now[1] > 1 and now[3] >= 5:
         gmail_send_message()
 
 
