@@ -1,30 +1,30 @@
-name: Surf Alert
+# name: Surf Alert
 
-on:
-  schedule:
-    - cron: '*/20 * * * *'  # Every 20 minutes
-  workflow_dispatch:        # Allow manual run
+# on:
+#   schedule:
+#     - cron: '*/20 * * * *'  # Every 20 minutes
+#   workflow_dispatch:        # Allow manual run
 
-jobs:
-  send-email:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+# jobs:
+#   send-email:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: '3.10'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt
 
-      - name: Run script
-        env:
-          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
-          GOOGLE_TOKEN: ${{ secrets.GOOGLE_TOKEN }}
-        run: |
-          echo "$GOOGLE_CREDENTIALS" > credentials.json
-          echo "$GOOGLE_TOKEN" > token.json
-          python Surf_Alert.py
+#       - name: Run script
+#         env:
+#           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+#           GOOGLE_TOKEN: ${{ secrets.GOOGLE_TOKEN }}
+#         run: |
+#           echo "$GOOGLE_CREDENTIALS" > credentials.json
+#           echo "$GOOGLE_TOKEN" > token.json
+#           python Surf_Alert.py
